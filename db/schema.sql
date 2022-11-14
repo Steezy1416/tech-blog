@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS tech-blog
+CREATE TABLE tech-blog

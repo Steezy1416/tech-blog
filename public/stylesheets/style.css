@@ -241,3 +241,121 @@ main {
 .hide {
     display: none;
 }
+
+/*
+
+
+sign up/login section
+
+
+*/
+
+.signup {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.login {
+    width: 50%;
+}
+
+.sign-up-container {
+    background-color: #6B6E70;
+    border-radius: 15px;
+    width: 100%;
+    margin: 70px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Monocraft;
+    padding: 20px;
+    box-shadow: 5px 10px 25px 1px black;
+}
+
+.login-container {
+    background-color: #6B6E70;
+    border-radius: 15px;
+    width: 100%;
+    margin: 70px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Monocraft;
+    padding: 20px;
+    box-shadow: 5px 10px 25px 1px black;
+}
+
+.welcome-title {
+    font-size: 35px;
+    padding: 15px;
+    margin: 15px;
+    color: white;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.input {
+    font-size: 18px;
+    border-radius: 15px;
+    padding: 7px;
+    font-family: Monocraft;
+    outline: none;
+    border: 3px solid #222629;
+    background-color: #333;
+    color: aliceblue;
+}
+
+input::placeholder {
+    color: #a9a9a9;
+    font-size: 18px;
+}
+
+input:hover::placeholder {
+    color: lightgrey;
+}
+
+.btn {
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 15px;
+    font-family: Monocraft;
+    border: 3px solid #222629;
+    background-color: #333;
+    color: #a9a9a9;
+}
+
+.btn:hover {
+    color: aliceblue;
+}
+
+.login-transfer {
+    color: lightgrey;
+    font-size: 17px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.signup-transfer {
+    color: lightgray;
+    font-size: 17px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.transfers {
+    font-size: 15px;
+    margin-left: 5px;
+    color: lightblue;
+}
+
+.transfers:hover {
+    border-bottom: 1px solid lightblue;
+}

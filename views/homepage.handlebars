@@ -20,12 +20,12 @@
             </ul>
 
             <div class="icon-container">
-                <i class="fa-regular fa-comment"></i>
+                <i class="fa-regular fa-comment" data-icon="{{id}}" onclick="displayComments(event)"></i>
             </div>
         </div>
     </section>
 
-    <section class="comments hide">
+    <section class="comments" id="comments-{{id}}">
         <p class="comment-title">Comments</p>
 
         <div class="comment-container">
@@ -39,8 +39,8 @@
             </ul>
         </div>
 
-        <form onsubmit="commentFormHandler(event)" class="post-comment" id="form-{{id}}">
-            <textarea type="text" name="comment-input" class="comment-input" rows="5" cols="30"></textarea>
+        <form onsubmit="commentFormHandler(event)" class="post-comment" data-comment_id="{{id}}">
+            <textarea type="text" name="comment-input" class="comment-input" rows="5" cols="30" id="textarea-{{id}}"></textarea>
             <button type="submit" class="add-post">+</button>
         </form>
     </section>

@@ -1,21 +1,13 @@
 async function commentFormHandler(event){
     event.preventDefault()
 
-    console.log(event.target)
-    const comment_text = event.target.querySelector('textarea[name="comment-input"]').value.trim()
-
-    const post = event.target.querySelector(".post")
-
-    const post_id = parseInt(post.getAttribute("data-post_id"))
+    const post_id = event.target.getAttribute("data-comment_id")
+    const comment_text = document.querySelector(`#textarea-${post_id}`).value.trim()
+    console.log(comment_text)
     
     const user_id = 3
 
-    console.log(post_id)
-
     if(comment_text){
-        console.log(post)
-        console.log(comment_text)
-        console.log(post_id)
         const response = await fetch("/api/comments", {
             method: "POST",
             body: JSON.stringify({
@@ -37,4 +29,15 @@ async function commentFormHandler(event){
     }
 }
 
-//document.querySelector(".post-comment").addEventListener("submit", commentFormHandler)
+function displayComments (event) {
+    const post_id = event.target.getAttribute("data-icon")
+
+    const commentBox = document.querySelector(`#comments-${post_id}`)
+
+    if(commentBox.classList[1] === "hide"){
+        commentBox.classList.remove("hide")
+    }
+    else{
+        commentBox.classList.add("hide")
+    }
+}

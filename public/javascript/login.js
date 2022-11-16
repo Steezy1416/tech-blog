@@ -28,15 +28,15 @@ async function signupHandler(event) {
 async function loginHandler(event) {
     event.preventDefault()
 
-    username_signup = document.querySelector(".username-signup").value.trim()
-    password_signup = document.querySelector(".password-signup").value.trim()
+    username_login = document.querySelector(".username-login").value.trim()
+    password_login = document.querySelector(".password-login").value.trim()
 
-    if(username_signup && password_signup){
-        const response = await fetch("/api/users", {
+    if(username_login && password_login){
+        const response = await fetch("/api/users/login", {
             method: "POST",
             body: JSON.stringify({
-                username: username_signup,
-                password: password_signup
+                username: username_login,
+                password: password_login
             }),
             headers: {
                 "Content-Type": "application/json"

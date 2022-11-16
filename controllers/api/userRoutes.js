@@ -37,10 +37,52 @@ router.post("/", (req, res) => {
         username: req.body.username,
         password: req.body.password
     })
-    .then(userData => res.json(userData))
+    .then(userData => {
+        req.session.save(() => {
+            req.session.user_id = userData.id,
+            req.session.username = userData.username,
+            req.secure.loggedIn = true
+
+            res.json(userData)
+        })
+    })
     .catch(err => {
         res.status(500).json(err)
     })
+})
+
+router.post("/login", (req, res) => {
+    User.findOne({
+        where: {
+            username: req.body.username
+        }
+    })
+    .then(userData => {
+        if (!userData) {
+            res.status(400).json({ message: "No user with that email address" })
+            return
+        }
+
+        req.session.save(() => {
+            // declare session variables
+            req.session.user_id = userData.id;
+            req.session.username = userData.username;
+            req.session.loggedIn = true;
+
+            res.json({ user: userData, message: "You have logged in"})
+        })
+    })
+})
+
+router.post("/logout", (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+          res.status(204).end();
+        });
+      }
+      else {
+        res.status(404).end();
+      }
 })
 
 //delete user

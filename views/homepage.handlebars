@@ -19,13 +19,15 @@
                 <li class="list">{{format_date created_at}}</li>
             </ul>
 
+            {{#if loggedIn}}
             <div class="icon-container">
                 <i class="fa-regular fa-comment" data-icon="{{id}}" onclick="displayComments(event)"></i>
             </div>
+            {{/if}}
         </div>
     </section>
 
-    <section class="comments" id="comments-{{id}}">
+    <section class="comments hide" id="comments-{{id}}">
         <p class="comment-title">Comments</p>
 
         <div class="comment-container">

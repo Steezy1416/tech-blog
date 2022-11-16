@@ -1,10 +1,10 @@
 async function commentFormHandler(event){
     event.preventDefault()
 
-    console.log(event)
-    const comment_text = document.querySelector('textarea[name="comment-input"]').value.trim()
+    console.log(event.target)
+    const comment_text = event.target.querySelector('textarea[name="comment-input"]').value.trim()
 
-    const post = document.querySelector(".post")
+    const post = event.target.querySelector(".post")
 
     const post_id = parseInt(post.getAttribute("data-post_id"))
     
@@ -37,4 +37,4 @@ async function commentFormHandler(event){
     }
 }
 
-document.querySelector(".post-comment").addEventListener("submit", commentFormHandler)
+//document.querySelector(".post-comment").addEventListener("submit", commentFormHandler)

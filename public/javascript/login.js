@@ -51,3 +51,13 @@ async function loginHandler(event) {
         }
     }
 }
+
+const toLogIn = () => {
+    document.querySelector(".signup").classList.remove("hide")
+    document.querySelector(".login").classList.add("hide")
+}
+
+const toSignUp = () => {
+    document.querySelector(".login").classList.remove("hide")
+    document.querySelector(".signup").classList.add("hide")
+}

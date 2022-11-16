@@ -18,8 +18,11 @@
                 <ul id="links">
                     <li class="nav"><a href="/">Home</a></li>
                     <li class="nav">Dashboard</li>
+                    {{#if loggedIn}}
                     <li class="nav" onclick="logout()">Logout</li>
+                    {{else}}
                     <li class="nav"><a href="/login">Login</a></li>
+                    {{/if}}
                 </ul>
             </nav>
         </div>

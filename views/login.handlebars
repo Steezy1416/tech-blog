@@ -8,21 +8,21 @@
             <br>
             <button type="submit" class="btn signup-btn">Sign Up</button>
         </form>
-        <p class="login-transfer">Already have an account?<span class="transfers">Login</span></p>
+        <p class="login-transfer">Already have an account?<span class="transfers" onclick="toSignUp()">Login</span></p>
     </section>
 </div>
 
-<div class="login">
+<div class="login hide">
     <section class="login-container">
         <p class="welcome-title">Welcome to Tech Blog</p>
         <form class="form" onsubmit="loginHandler(event)">
-            <input type="text" class="username-login input" placeholder="Enter a username">
+            <input type="text" class="username-login input" placeholder="Enter your username">
             <br>
-            <input type="text" class="password-login input" placeholder="Enter a password">
+            <input type="text" class="password-login input" placeholder="Enter your password">
             <br>
             <button type="submit" class="btn login-btn">Login</button>
         </form>
-        <p class="signup-transfer">Dont have an account?<span class="transfers">Sign up</span></p>
+        <p class="signup-transfer">Dont have an account?<span class="transfers" onclick="toLogIn()">Sign up</span></p>
     </section>
 </div>
 

@@ -1,12 +1,12 @@
 <div class="signup">
     <section class="sign-up-container">
         <p class="welcome-title">Welcome to Tech Blog</p>
-        <form class="form">
+        <form class="form" onsubmit="signupHandler(event)">
             <input type="text" class="username-signup input" placeholder="Enter a username">
             <br>
             <input type="text" class="password-signup input" placeholder="Enter a password">
             <br>
-            <button class="btn signup-btn">Sign Up</button>
+            <button type="submit" class="btn signup-btn">Sign Up</button>
         </form>
         <p class="login-transfer">Already have an account?<span class="transfers">Login</span></p>
     </section>
@@ -15,13 +15,15 @@
 <div class="login">
     <section class="login-container">
         <p class="welcome-title">Welcome to Tech Blog</p>
-        <form class="form">
+        <form class="form" onsubmit="loginHandler(event)">
             <input type="text" class="username-login input" placeholder="Enter a username">
             <br>
             <input type="text" class="password-login input" placeholder="Enter a password">
             <br>
-            <button class="btn login-btn">Login</button>
+            <button type="submit" class="btn login-btn">Login</button>
         </form>
         <p class="signup-transfer">Dont have an account?<span class="transfers">Sign up</span></p>
     </section>
 </div>
+
+<script src="/javascript/login.js"></script>

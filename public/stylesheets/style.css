@@ -359,3 +359,63 @@ input:hover::placeholder {
 .transfers:hover {
     border-bottom: 1px solid lightblue;
 }
+
+
+/*
+
+
+Dashboard section
+
+
+*/
+
+
+.new-post-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-post-title {
+    font-size: 35px;
+    padding: 15px;
+    margin: 15px;
+    color: white;
+    text-align: center;
+}
+
+.post-description {
+    font-size: 18px;
+    border-radius: 15px;
+    padding: 7px;
+    font-family: Monocraft;
+    outline: none;
+    border: 3px solid #222629;
+    background-color: #333;
+    color: aliceblue;
+    outline: none;
+    resize: none;
+}
+
+.new-post {
+    width: 40%;
+}
+
+.post-description::placeholder {
+    color: #a9a9a9;
+    font-size: 18px;
+}
+
+.post-description:hover::placeholder {
+    color: lightgrey;
+}
+
+#your-post-title {
+    font-size: 30px;
+    color: white;
+    font-family: Monocraft;
+    padding: 5px;
+    border-bottom: 3px solid white;
+    margin-bottom: 10px;
+}

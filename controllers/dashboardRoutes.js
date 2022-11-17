@@ -3,10 +3,11 @@ const router = require("express").Router()
 const { User, Post, Comment } = require("../models")
 
 router.get("/", (req, res) => {
-    console.log(req.session)
-    
     Post.findAll({
-        attributes: ["id", "title", "description", "user_id", "created_at"],
+        where: {
+            user_id: req.session.user_id
+        },
+        attributes: ["id", "title", "description", "created_at", "user_id"],
         include: [{
             model: Comment,
             attributes: ["id", "comment_text", "user_id", "post_id", "created_at"],
@@ -22,28 +23,9 @@ router.get("/", (req, res) => {
     })
     .then(postData => {
         const posts = postData.map(post => post.get({ plain: true }))
-        
-        const isLoggedIn = () => {
-            if(req.session.loggedIn === true){
-                return true
-            }
-            return false
-        }
-
-        console.log(isLoggedIn())
-
-        res.render("homepage", {posts, loggedIn: isLoggedIn(), userId: req.session.user_id})
+        console.log(posts)
+        res.render("dashboard", {posts, userId: req.session.user_id})
     })
 })
 
-router.get("/login", (req, res) => {
-
-    if(req.session.loggedIn){
-        res.redirect("/")
-        return
-    }
-
-    res.render("login")
-})
-
-module.exports = router
+module.exports= router

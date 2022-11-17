@@ -1,0 +1,15 @@
+<div class="new-post" data-user_id={{userId}}>
+    <section class="login-container">
+        <p class="edit-post-title">Edit Post</p>
+        <form class="edit-post-form" onsubmit="editPost(event)">
+            <input type="text" class="edit-title input" placeholder="Enter a title">
+            <br>
+            <textarea name="" class="edit-post-description" cols="30" rows="5" placeholder="Enter a description"></textarea>
+            <br>
+            <button type="submit" class="btn edit-btn">Edit</button>
+        </form>
+        <button class="btn delete-btn" onclick="deletePost()">Delete</button>
+    </section>
+</div>
+
+<script src="/javascript/edit-post.js"></script>

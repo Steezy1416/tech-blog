@@ -419,3 +419,77 @@ Dashboard section
     border-bottom: 3px solid white;
     margin-bottom: 10px;
 }
+
+.edit-post {
+    font-size: 20px;
+    padding: 15px 0px;
+    margin-right: 15px;
+}
+
+.edit-post:hover {
+    color: white;
+}
+
+
+/*
+
+
+edit post section
+
+
+*/
+
+.edit-post-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-post-title {
+    font-size: 35px;
+    padding: 15px;
+    margin: 15px;
+    color: white;
+    text-align: center;
+}
+
+.edit-post-description {
+    font-size: 18px;
+    border-radius: 15px;
+    padding: 7px;
+    font-family: Monocraft;
+    outline: none;
+    border: 3px solid #222629;
+    background-color: #333;
+    color: aliceblue;
+    outline: none;
+    resize: none;
+}
+
+.edit-post {
+    width: 40%;
+}
+
+.edit-post-description::placeholder {
+    color: #a9a9a9;
+    font-size: 18px;
+}
+
+.edit-post-description:hover::placeholder {
+    color: lightgrey;
+}
+
+.edit-post {
+    font-size: 20px;
+    padding: 15px 0px;
+    margin-right: 15px;
+}
+
+.edit-post:hover {
+    color: white;
+}
+
+.delete-btn {
+    margin: 10px;
+}

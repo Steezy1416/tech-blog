@@ -28,4 +28,27 @@ router.get("/", (req, res) => {
     })
 })
 
+router.get("/edit/:id", (req, res) => {
+    Post.findByPk(req.params.id, {
+        attributes: ["id", "title", "description", "created_at"],
+        include: [{
+            model: Comment,
+            attributes: ["id", "comment_text", "user_id", "post_id", "created_at"],
+            include: [{
+                model: User,
+                attributes: ["username"]
+            }]
+        },
+        {
+            model: User,
+            attributes: ["username"]
+        }]
+    })
+    .then(postData => {
+        const post = postData.get({plain: true})
+        console.log(post)
+        res.render("edit-post", post)
+    })
+})
+
 module.exports= router

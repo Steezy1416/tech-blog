@@ -1,9 +1,11 @@
+//allows the user to sign up
 async function signupHandler(event) {
     event.preventDefault()
 
     username_signup = document.querySelector(".username-signup").value.trim()
     password_signup = document.querySelector(".password-signup").value.trim()
 
+    //will only sign up user once both forms have been filled
     if(username_signup && password_signup){
         const response = await fetch("/api/users", {
             method: "POST",
@@ -25,6 +27,7 @@ async function signupHandler(event) {
     }
 }
 
+//allows the user to log in
 async function loginHandler(event) {
     event.preventDefault()
 
@@ -44,6 +47,7 @@ async function loginHandler(event) {
         })
 
         if(response.ok){
+            document.location.reload()
             document.location.replace("/")
         }
         else{
@@ -52,11 +56,12 @@ async function loginHandler(event) {
     }
 }
 
+//if user has account this switches to log in form
 const toLogIn = () => {
     document.querySelector(".signup").classList.remove("hide")
     document.querySelector(".login").classList.add("hide")
 }
-
+// if user does not have account this switches to sign up form
 const toSignUp = () => {
     document.querySelector(".login").classList.remove("hide")
     document.querySelector(".signup").classList.add("hide")

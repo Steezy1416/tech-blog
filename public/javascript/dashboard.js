@@ -1,3 +1,4 @@
+//allows user to create post
 async function createPost() {
     const title = document.querySelector(".new-title").value.trim()
     const description = document.querySelector(".post-description").value.trim()

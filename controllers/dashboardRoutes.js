@@ -2,6 +2,7 @@ const sequelize = require("../config/connection")
 const router = require("express").Router()
 const { User, Post, Comment } = require("../models")
 
+//renders the dashboard page
 router.get("/", (req, res) => {
     Post.findAll({
         where: {
@@ -34,6 +35,7 @@ router.get("/", (req, res) => {
     })
 })
 
+//renders the edit page
 router.get("/edit/:id", (req, res) => {
     Post.findByPk(req.params.id, {
         attributes: ["id", "title", "description", "created_at"],

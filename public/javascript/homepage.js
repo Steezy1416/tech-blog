@@ -1,3 +1,4 @@
+//allows user to post comment
 async function commentFormHandler(event){
     event.preventDefault()
 
@@ -30,6 +31,7 @@ async function commentFormHandler(event){
     }
 }
 
+//displays the comment box once the button has been clicked
 function displayComments (event) {
     const post_id = event.target.getAttribute("data-icon")
 

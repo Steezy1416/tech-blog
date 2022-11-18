@@ -1,3 +1,4 @@
+//alows user to edit post
 async function editPost(event) {
     event.preventDefault()
 
@@ -9,6 +10,7 @@ async function editPost(event) {
 
     console.log(title, description, post_id)
 
+    //if statements to know how to handle the post edit so nothing gets deleted by accident
     if(title && description){
         const response = await fetch(`/api/posts/${post_id}`, {
             method: "PUT",
@@ -58,6 +60,7 @@ async function editPost(event) {
 
 }
 
+//allows user to delete post
 async function deletePost(){
     const post_id = parseInt(window.location.toString().split("/")[5])
 

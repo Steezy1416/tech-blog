@@ -2,6 +2,7 @@ const sequelize = require("../config/connection")
 const router = require("express").Router()
 const { User, Post, Comment } = require("../models")
 
+//renders the homepage
 router.get("/", (req, res) => {
     console.log(req.session)
     
@@ -41,6 +42,7 @@ router.get("/", (req, res) => {
     })
 })
 
+//renders the login page
 router.get("/login", (req, res) => {
 
     if(req.session.loggedIn){

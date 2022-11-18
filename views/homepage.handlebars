@@ -1,0 +1,101 @@
+{{#if loggedIn}}
+{{#each postOrder}}
+<div class="post" data-post_id={{id}}>
+
+    <section class="main-post">
+        <p class="title">{{title}}</p>
+
+        <div class="content-container">
+            <p class="content">{{description}}</p>
+        </div>
+
+        <div class="button-container">
+
+        </div>
+
+        <div class="icons">
+
+            <ul class="user-date-container">
+                <li class="list">{{user.username}}</li>
+                <li class="list">{{format_date created_at}}</li>
+            </ul>
+
+            <div class="icon-container">
+                <i class="fa-regular fa-comment" data-icon="{{id}}" onclick="displayComments(event)"></i>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="comments hide" id="comments-{{id}}">
+        <p class="comment-title">Comments</p>
+
+        <div class="comment-container">
+            <ul class="comment-list">
+                {{#each comments}}
+                <p class="comment-user">{{user.username}} on {{format_date created_at}}</p>
+                <li class="comment">
+                    <p>{{comment_text}}</p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <form onsubmit="commentFormHandler(event)" class="post-comment" data-comment_id="{{id}}">
+            <textarea type="text" name="comment-input" class="comment-input" rows="5" cols="30"
+                id="textarea-{{id}}"></textarea>
+            <button type="submit" class="add-post">+</button>
+        </form>
+    </section>
+</div>
+<script src="/javascript/homepage.js"></script>
+{{/each}}
+{{else}}
+{{#each postOrder}}
+<div class="post" data-post_id={{id}}>
+
+    <section class="main-post">
+        <p class="title">{{title}}</p>
+
+        <div class="content-container">
+            <p class="content">{{description}}</p>
+        </div>
+
+        <div class="button-container">
+
+        </div>
+
+        <div class="icons">
+
+            <ul class="user-date-container">
+                <li class="list">{{user.username}}</li>
+                <li class="list">{{format_date created_at}}</li>
+            </ul>
+
+        </div>
+    </section>
+
+    <section class="comments hide" id="comments-{{id}}">
+        <p class="comment-title">Comments</p>
+
+        <div class="comment-container">
+            <ul class="comment-list">
+                {{#each comments}}
+                <p class="comment-user">{{user.username}} on {{format_date created_at}}</p>
+                <li class="comment">
+                    <p>{{comment_text}}</p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <form onsubmit="commentFormHandler(event)" class="post-comment" data-comment_id="{{id}}">
+            <textarea type="text" name="comment-input" class="comment-input" rows="5" cols="30"
+                id="textarea-{{id}}"></textarea>
+            <button type="submit" class="add-post">+</button>
+        </form>
+    </section>
+</div>
+<script src="/javascript/homepage.js"></script>
+{{/each}}
+{{/if}}

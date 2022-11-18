@@ -51,6 +51,7 @@ router.post("/", (req, res) => {
         })
 })
 
+//logs you in
 router.post("/login", (req, res) => {
     User.findOne({
         where: {
@@ -59,17 +60,14 @@ router.post("/login", (req, res) => {
     })
         .then(userData => {
             if (!userData) {
-                res.status(400).json({ message: "No user with that email address" })
                 return
             }
 
             const validPassword = dbUserData.checkPassword(req.body.password)
 
             if (!validPassword) {
-                res.status(400).json({ message: "Incorrect password!" })
                 return
             }
-
 
             req.session.save(() => {
                 // declare session variables
@@ -82,6 +80,7 @@ router.post("/login", (req, res) => {
         })
 })
 
+//logs you out
 router.post("/logout", (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {

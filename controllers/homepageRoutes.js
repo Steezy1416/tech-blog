@@ -30,9 +30,14 @@ router.get("/", (req, res) => {
             return false
         }
 
-        console.log(isLoggedIn())
+        let postOrder = []
 
-        res.render("homepage", {posts, loggedIn: isLoggedIn(), userId: req.session.user_id})
+        posts.forEach(post => postOrder.push(post))
+
+        postOrder = postOrder.reverse()
+
+
+        res.render("homepage", {postOrder, loggedIn: isLoggedIn(), userId: req.session.user_id})
     })
 })
 

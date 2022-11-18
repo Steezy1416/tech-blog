@@ -1,5 +1,5 @@
 {{#if loggedIn}}
-{{#each posts}}
+{{#each postOrder}}
 <div class="post" data-post_id={{id}}>
 
     <section class="main-post">
@@ -51,7 +51,7 @@
 <script src="/javascript/homepage.js"></script>
 {{/each}}
 {{else}}
-{{#each posts}}
+{{#each postOrder}}
 <div class="post" data-post_id={{id}}>
 
     <section class="main-post">

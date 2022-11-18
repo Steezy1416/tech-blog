@@ -11,13 +11,13 @@
     </section>
 </div>
 
-{{#if posts}}
+{{#if postOrder}}
 <p id="your-post-title">Your Posts</p>
 {{else}}
 <p id="your-post-title">You have no posts</p>
 {{/if}}
 
-{{#each posts}}
+{{#each postOrder}}
 <div class="post" data-post_id={{id}}>
 
     <section class="main-post">

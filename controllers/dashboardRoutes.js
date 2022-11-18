@@ -23,8 +23,14 @@ router.get("/", (req, res) => {
     })
     .then(postData => {
         const posts = postData.map(post => post.get({ plain: true }))
-        console.log(posts)
-        res.render("dashboard", {posts, userId: req.session.user_id})
+
+        let postOrder = []
+
+        posts.forEach(post => postOrder.push(post))
+
+        postOrder = postOrder.reverse()
+
+        res.render("dashboard", {postOrder, userId: req.session.user_id})
     })
 })
 
@@ -47,6 +53,7 @@ router.get("/edit/:id", (req, res) => {
     .then(postData => {
         const post = postData.get({plain: true})
         console.log(post)
+
         res.render("edit-post", post)
     })
 })

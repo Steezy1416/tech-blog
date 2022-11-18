@@ -37,6 +37,10 @@ body {
     font-size: 20px;
 }
 
+.nav:hover {
+    border-bottom: 1px solid white;
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -467,9 +471,9 @@ edit post section
     resize: none;
 }
 
-.edit-post {
+/* .edit-post {
     width: 40%;
-}
+} */
 
 .edit-post-description::placeholder {
     color: #a9a9a9;
@@ -486,10 +490,11 @@ edit post section
     margin-right: 15px;
 }
 
-.edit-post:hover {
-    color: white;
-}
-
 .delete-btn {
     margin: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
